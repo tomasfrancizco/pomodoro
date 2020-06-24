@@ -29,6 +29,9 @@ body {
   margin-bottom: 20px;
   color: white;
   text-align: center;
+  background-color: rgba(57,114,152,0.5);
+  padding: 15px;
+  border-radius: 5px;
 }
 
 form {
@@ -62,7 +65,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #404040;
+  background-color: rgba(57,114,152,0.5);
   color: white;
   border-radius: 10px;
 }
