@@ -5,6 +5,8 @@ let count = 1500;
 
 let interval;
 
+const audio = new Audio("./purge.mp3")
+
 function start() {
   if (count < 1500) {
     clearInterval(interval);
@@ -17,9 +19,9 @@ function start() {
 
 function setHtml() {
   count--;
-  console.log(count);
-  if (count < 1490) {
+  if (count < 0) {
     button.innerHTML = "Start";
+    audio.play()
     clearInterval(interval);
   } else {
     timer.innerHTML = `${Math.floor(count / 60)}:${Math.floor(count % 60)}`;
