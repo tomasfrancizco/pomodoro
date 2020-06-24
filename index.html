@@ -4,17 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro</title>
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div id="main-container">
+      <img
+        src="./Images/logo_transparent.png"
+        alt="logo"
+        style="width: 250px;"
+      />
+      <div id="header-container">
+        <h1>Welcome to Pomodoro!</h1>
+        <h5>
+          25 minutes is the default time, but you can set the one you prefer
+          right here!
+        </h5>
+      </div>
+      <form id="set-time-form">
+        <input type="number" id="set-time-input" />
+        <button id="set-time-button" type="submit">SET NEW TIME</button>
+      </form>
+
       <div id="timer-container">
         <div id="timer">25:00</div>
       </div>
       <div id="button-container">
-        <button id="start-button" onclick="start()">START</button>
-        <button id="pause-button" onclick="pause()" disabled>PAUSE</button>
-        <button id="clear-button" onclick="clearAll()">CLEAR</button>
+        <button class="timer-button" id="start-button" onclick="start()">
+          START
+        </button>
+        <button
+          class="timer-button"
+          id="pause-button"
+          onclick="pause()"
+          disabled
+        >
+          PAUSE
+        </button>
+        <button class="timer-button" id="clear-button" onclick="clearAll()">
+          CLEAR
+        </button>
       </div>
       <audio src=""></audio>
     </div>
