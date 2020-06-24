@@ -3,9 +3,12 @@ const startButton = document.getElementById("start-button");
 const pauseButton = document.getElementById("pause-button");
 const clearButton = document.getElementById("clear-button");
 
-let count = 1500;
 let isPaused = false;
 let interval;
+let current = 0;
+let count = 1500 - current;
+
+
 
 const audio = new Audio("./purge.mp3");
 
@@ -27,11 +30,16 @@ function start() {
           : Math.floor(count % 60)
       }`;
     }
+    if(count < 0){
+      audio.play()
+    }
   }, 1000);
 }
 
 function pause() {
   isPaused = true;
+  clearInterval(interval)
+  current = count;
   startButton.disabled = false;
   pauseButton.disabled = true;
 }
