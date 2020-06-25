@@ -12,7 +12,7 @@
 
 body {
   height: 100vh;
-  background-image: url(./Images/clock.jpg);
+  background-image: url(./Images/neon-back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -27,9 +27,9 @@ body {
 
 #header-container {
   margin-bottom: 20px;
-  color: white;
+  color: black;
   text-align: center;
-  background-color: rgba(57,114,152,0.5);
+  background-color: rgba(224,224,224,0.8);
   padding: 15px;
   border-radius: 5px;
 }
@@ -65,13 +65,14 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(57,114,152,0.5);
+  background-color: rgba(62,63,61,0.8);
   color: white;
   border-radius: 10px;
 }
 
 #timer {
   font-size: 6rem;
+  letter-spacing: 4px;
 }
 
 .timer-button {

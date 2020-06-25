@@ -4,14 +4,16 @@ const pauseButton = document.getElementById("pause-button");
 const clearButton = document.getElementById("clear-button");
 const newTimeInput = document.getElementById("set-time-input");
 const newTimeForm = document.getElementById("set-time-form")
+const newTimeButton = document.getElementById("set-time-button")
 const audio = new Audio("./purge.mp3");
 
 newTimeForm.addEventListener("submit", newTimeSubmit)
 
-let newTime;
+let newTime = 1500;
 let isPaused = false;
 let interval;
 let current = 0;
+let count = newTime - current;
 
 function newTimeSubmit(event){
   event.preventDefault()
@@ -32,12 +34,11 @@ function newTimeSubmit(event){
   }`;
 }
 
-let count = (newTime || 1500) - current;
-
 function start() {
   isPaused = false;
   startButton.disabled = true;
   pauseButton.disabled = false;
+  newTimeButton.disabled = true;
   interval = setInterval(() => {
     if (!isPaused && count > 0) {
       count--;
@@ -72,4 +73,5 @@ function clearAll() {
   timer.innerHTML = "25:00";
   startButton.disabled = false;
   pauseButton.disabled = true;
+  newTimeButton.disabled = false;
 }
