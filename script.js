@@ -23,15 +23,7 @@ function newTimeSubmit(event){
     newTime = (newTimeInput.value * 60)
   }
   newTimeInput.value = ""
-  return timer.innerHTML = `${
-    Math.floor(newTime / 60) < 10
-      ? "0" + Math.floor(newTime / 60)
-      : Math.floor(newTime / 60)
-  }:${
-    Math.floor(newTime % 60) < 10
-      ? "0" + Math.floor(newTime % 60)
-      : Math.floor(newTime % 60)
-  }`;
+  return timer.innerHTML = printClock(newTime);
 }
 
 function start() {
@@ -42,20 +34,24 @@ function start() {
   interval = setInterval(() => {
     if (!isPaused && count > 0) {
       count--;
-      timer.innerHTML = `${
-        Math.floor(count / 60) < 10
-          ? "0" + Math.floor(count / 60)
-          : Math.floor(count / 60)
-      }:${
-        Math.floor(count % 60) < 10
-          ? "0" + Math.floor(count % 60)
-          : Math.floor(count % 60)
-      }`;
+      timer.innerHTML = printClock(count);
     }
     if (count == 0) {
       audio.play();
     }
   }, 1000);
+}
+
+const printClock = num => {
+  return `${
+    Math.floor(num / 60) < 10
+      ? "0" + Math.floor(num / 60)
+      : Math.floor(num / 60)
+  }:${
+    Math.floor(num % 60) < 10
+      ? "0" + Math.floor(num % 60)
+      : Math.floor(num % 60)
+  }`
 }
 
 function pause() {
