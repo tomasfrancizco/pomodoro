@@ -21,6 +21,7 @@ function newTimeSubmit(event){
     return
   } else {
     newTime = (newTimeInput.value * 60)
+    count = newTime - current
   }
   newTimeInput.value = ""
   return timer.innerHTML = printClock(newTime);
@@ -65,6 +66,8 @@ function pause() {
 function clearAll() {
   clearInterval(interval);
   count = 1500;
+  current = 0;
+  newTime = 1500;
   isPaused = false;
   timer.innerHTML = "25:00";
   startButton.disabled = false;
