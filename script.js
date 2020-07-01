@@ -35,6 +35,7 @@ function start() {
   interval = setInterval(() => {
     if (!isPaused && count > 0) {
       count--;
+      progress()
       timer.innerHTML = printClock(count);
     }
     if (count == 0) {
@@ -61,6 +62,27 @@ function pause() {
   current = count;
   startButton.disabled = false;
   pauseButton.disabled = true;
+}
+
+function progress() {
+  if(current == 0){
+    current = 1;
+    let bar = document.getElementById("progress-bar");
+    let width = 1;
+    let id = setInterval(frame, newTime * 10);
+    console.log("hola desde el antes...")
+    function frame() {
+      if (width >= 100) {
+        console.log("hola desde el if...")
+        clearInterval(id);
+        current = 0;
+      } else {
+        width++;
+        console.log("hola desde el else...")
+        bar.style.width = width + "%";
+      }
+    }
+  }
 }
 
 function clearAll() {
