@@ -6,6 +6,7 @@ const newTimeInput = document.getElementById("set-time-input");
 const newTimeForm = document.getElementById("set-time-form")
 const newTimeButton = document.getElementById("set-time-button")
 const audio = new Audio("./purge.mp3");
+const bar = document.getElementById("progress-bar");
 
 newTimeForm.addEventListener("submit", newTimeSubmit)
 
@@ -67,18 +68,14 @@ function pause() {
 function progress() {
   if(current == 0){
     current = 1;
-    let bar = document.getElementById("progress-bar");
     let width = 1;
-    let id = setInterval(frame, newTime * 10);
-    console.log("hola desde el antes...")
+    const id = setInterval(frame, newTime * 10);
     function frame() {
-      if (width >= 100) {
-        console.log("hola desde el if...")
+      if (width >= 100 || isPaused == true) {
         clearInterval(id);
         current = 0;
       } else {
         width++;
-        console.log("hola desde el else...")
         bar.style.width = width + "%";
       }
     }
@@ -90,8 +87,11 @@ function clearAll() {
   count = 1500;
   current = 0;
   newTime = 1500;
-  isPaused = false;
+  isPaused = true;
   timer.innerHTML = "25:00";
+  audio.pause();
+  audio.currentTime = 0;
+  bar.style.width = 0;
   startButton.disabled = false;
   pauseButton.disabled = true;
   newTimeButton.disabled = false;
