@@ -45,7 +45,7 @@ form {
 }
 
 #set-time-button {
-  width: 100px;
+  padding: 0 10px;
   height: 30px;
   font-size: 1em;
   background-color: lightgrey;
