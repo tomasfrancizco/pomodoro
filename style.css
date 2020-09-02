@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Anton;
+  font-family: Roboto;
 }
 
 body {
   height: 100vh;
-  background-image: url(./Images/neon-back.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: #4e89ae;
 }
 
 #main-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
@@ -23,9 +22,8 @@ body {
 
 #header-container {
   margin-bottom: 20px;
-  color: black;
+  color: #a2d5f2;
   text-align: center;
-  background-color: rgba(224,224,224,0.8);
   padding: 15px;
   border-radius: 5px;
 }
@@ -48,8 +46,9 @@ form {
   padding: 0 10px;
   height: 30px;
   font-size: 1em;
-  background-color: lightgrey;
+  background-color: #43658b;
   border: 1px solid gray;
+  color: white;
   border-radius: 3px;
   box-shadow: 1px 1px 1px gray;
   cursor: pointer;
@@ -61,8 +60,8 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(62,63,61,0.8);
-  color: white;
+  border: 4px solid #ed6663;
+  color: #ed6663;
   border-radius: 10px;
 }
 
@@ -75,10 +74,10 @@ form {
   width: 120px;
   height: 40px;
   font-size: 1.2em;
-  background-color: lightgrey;
+  background-color: #43658b;
+  color: white;
   border: 1px solid gray;
   border-radius: 3px;
-  box-shadow: 2px 2px 2px gray;
   margin-top: 20px;
   cursor: pointer;
 }
@@ -86,18 +85,15 @@ form {
 #progress-bar-container {
   width: 500px;
   height: 40px;
-  background-color: lightgray;
+  background-color: #a2d5f2;
   margin-top: 20px;
-  box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.5), -5px -5px 8px 0 rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
   border: 2px solid gray;
 }
 
 #progress-bar {
-  background-color: green;
+  background-color: #ffa372;
   width: 0;
   height: 100%;
-  border-radius: 5px;
 }
 
 @media (max-width: 400px){
